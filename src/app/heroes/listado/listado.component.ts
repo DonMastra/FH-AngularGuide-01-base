@@ -7,10 +7,14 @@ import { Component } from '@angular/core';
 export class ListadoComponent {
 
   heroes: string[] = ['Spiderman', 'Hulk', "Ironman", 'Thor'];
+  heroeBorrado?: string = "";
 
+
+  //Dos posibles soluciones: con el operador opcional '?'
+  // o con los pipes OR '||' para que retorne un string vacío
   borrarHeroe() {
-    console.log( 'Borrando heroe...' );
-
+    this.heroeBorrado = this.heroes.pop() || '';
+    console.log( this.heroeBorrado );
   }
 
 }
